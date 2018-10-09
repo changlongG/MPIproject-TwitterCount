@@ -9,8 +9,8 @@ around Melbourne. Specifically you should:
 
 # Implementation Steps
 1. Implement MPJ Express interface to make the task parallel. MPJ Express is an open source Java message passing library that allows application developers to write and execute parallel applications for multicore processors and compute clusters/clouds.
-2. Use JSONArray and JSONObject to parse json files.
-3. Maintain an array for each parallel process to count the number of Twitters of each areas or boxes, the size of array is the number of distinct areas. Use `MPI.COMM_WORLD.Reduce()` to combine results of all parallel processes.
+2. Use `JSONArray` and `JSONObject` to parse json files.
+3. Maintain an array for each parallel process to count the number of Twitters of each areas or boxes, the size of array is the number of distinct areas. Use `MPI.COMM_WORLD.Reduce()` method to combine results of all parallel processes.
    
 # Useful notes
 An individual tweet can be considered to occur in the box if its geo-location information (the tweet latitude and longitude given by the tweet coordinates) is within the box identified by the set of coordinates in melbGrid.json. It should be noted that the file bigTwitter.json includes many tweets that are not in this grid, e.g. they are from other Australian cities or from other parts of Victoria. 
